@@ -1,4 +1,4 @@
-FROM python:3.10-alpine
+FROM python:3.8-slim-buster
 
 WORKDIR /app
 
@@ -6,6 +6,4 @@ COPY . .
 
 RUN pip install -r Requirements.txt
 
-EXPOSE 5000
-
-CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["python","-m","flask","run", "--host=0.0.0.0"]
