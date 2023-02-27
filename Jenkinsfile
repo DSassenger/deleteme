@@ -1,1 +1,11 @@
-pipeline syntax
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'docker build -t sasse/flaskapp .'
+            }
+        }
+    }
+}
