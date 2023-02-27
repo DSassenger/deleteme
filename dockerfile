@@ -1,9 +1,4 @@
-FROM python
-
-WORKDIR /app
-
-COPY . .
-
-RUN pip install -r Requirements.txt
-
-CMD ["python", "-m", "flask", "run", "--host=0.0.0.0"]
+FROM jenkins/jenkins:latest
+USER root
+RUN curl -sSL https://get.docker.com/ | sh
+USER jenkins
