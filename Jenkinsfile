@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     // sign into AWS
-                    withAWS(credentials: 'AWS-Credential', region: 'us-east-1'){ 
+                    withAWS(credentials: 'AWS_Credential', region: 'us-east-1'){ 
                         sh 'aws sts get-caller-identity'
                     }
                 }
@@ -36,7 +36,7 @@ pipeline {
         stage('Create Namespace'){
             steps {
                 script {
-                    withAWS(credentials: 'AWS-credential', region: 'us-east-1') {
+                    withAWS(credentials: 'AWS-Credential', region: 'us-east-1') {
                         try {
                             sh 'kubectl apply -f manifest.yaml'
                         } catch (Exception e) {
